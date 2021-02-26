@@ -30,8 +30,8 @@ class NavLeft extends React.Component {
         this.setState({
             currentKey: ""
         });
-    };
-    componentWillMount() { 
+    }; 
+    componentWillMount() {                
         //MenuConfig：从组件获取的数据  
        const MenuTreeNode = this.renderMenu(MenuConfig);
        let currentKey = window.location.hash.replace(/#|\?.*$/g, '');
@@ -39,7 +39,7 @@ class NavLeft extends React.Component {
            currentKey,
            MenuTreeNode
        })
-    }
+    } 
     //菜单渲染 -- 递归
     renderMenu = (data) => {
        return data.map((item) => {

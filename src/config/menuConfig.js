@@ -42,20 +42,6 @@ const menuList = [
         ]
     },
     {
-        title:'表单',
-        key:'/form',
-        children:[
-            {
-                title:'登录',
-                key:'/form/login',
-            },
-            {
-                title:'注册',
-                key:'/form/reg',
-            }
-        ]
-    },
-    {
         title:'表格',
         key:'/table',
         children:[

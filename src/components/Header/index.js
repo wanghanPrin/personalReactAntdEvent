@@ -26,14 +26,14 @@ class Header extends React.Component {
                <Row className="header-top">
                   <Col span={6} className="logo">
                      <img src="/assets/logo-ant.svg" alt="图像" />
-                     <span>LJQ 通用管理系统</span>
+                     <span>网站内容管理系统</span>
                   </Col> 
-                  <Col span={18}>
+                  <Col span={18}> 
                       <span>欢迎，{this.state.userName}</span>
-                      <Link to="/login">退出</Link>
+                      <Link to="/login">退出</Link>            
                   </Col>
                </Row>
-                   <Row className="breadcrumb">
+               <Row className="breadcrumb">
                         <Col span={4} className="breadcrumb-title">
                             {menuName}
                         </Col>
@@ -41,7 +41,7 @@ class Header extends React.Component {
                             <span className="date">{this.state.sysTime}</span>
                             <span className="weather-detail">晴转多云</span>
                         </Col>
-                   </Row>
+               </Row>
             </div>
         )
     }

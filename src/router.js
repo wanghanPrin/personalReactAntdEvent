@@ -17,8 +17,6 @@ const Messages = AsyncComponent(() => import("./pages/ui/messages"))
 const Tabs = AsyncComponent(() => import("./pages/ui/tabs"))
 const Gallery = AsyncComponent(() => import("./pages/ui/gallery"))
 const Carousel = AsyncComponent(() => import("./pages/ui/carousel"))
-const FormLogin = AsyncComponent(() => import("./pages/form/login"))
-const FormRegister = AsyncComponent(() => import("./pages/form/login"))
 const BasicTable = AsyncComponent(() => import("./pages/table/basicTable"))
 const HighTable = AsyncComponent(() => import("./pages/table/highTable"))
 const RichText = AsyncComponent(() => import("./pages/rich/index"))
@@ -57,8 +55,6 @@ class RouterView extends React.Component{
                             <Route path="/ui/tabs" component={Tabs}></Route>
                             <Route path="/ui/gallery" component={Gallery}></Route>
                             <Route path="/ui/carousel" component={Carousel}></Route>
-                            <Route path="/form/login" component={FormLogin}></Route>
-                            <Route path="/form/reg" component={FormRegister}></Route>
                             <Route path="/table/basic" component={BasicTable}></Route>
                             <Route path="/table/high" component={HighTable}></Route>
                             <Route path="/rich" component={RichText}></Route>
