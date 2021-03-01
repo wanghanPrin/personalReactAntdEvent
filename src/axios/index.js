@@ -53,12 +53,6 @@ export default class Axios{
         //      loading.style.display = 'block';
         //  }
          let baseApi = 'https://www.easy-mock.com/mock/5c2c7c1b580d6209d1e2aa88/mockapi'
-         //  let baseApi = '';
-         //  if(options.isMock){
-         //      baseApi = 'https://www.easy-mock.com/mock/5c2c7c1b580d6209d1e2aa88/mockapi'
-         //  }else{
-         //      baseApi = 'https://www.easy-mock.com'//改为真实的服务端接口地址
-         //  }
          
          return new Promise((resolve,reject) => {
               axios({

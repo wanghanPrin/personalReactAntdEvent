@@ -127,5 +127,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "proxy": "http://appdata-dev.derunht.cn"
 }

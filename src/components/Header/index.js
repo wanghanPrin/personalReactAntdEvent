@@ -1,9 +1,10 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import { Row, Col } from 'antd'
+// import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router';
+import { Row, Col, message } from 'antd'
 import './index.less'
 import Util from '../../utils/utils'
-import axios from '../../axios';
+import {userLogout} from '../../request/api.js'
 import {connect} from 'react-redux'  //连接器
 
 class Header extends React.Component {  
@@ -30,8 +31,8 @@ class Header extends React.Component {
                   </Col> 
                   <Col span={18}> 
                       <span>欢迎，{this.state.userName}</span>
-                      <Link to="/login">退出</Link>            
-                  </Col>
+                      <span onClick={this.loginOut}>退出</span>            
+                  </Col> 
                </Row>
                <Row className="breadcrumb">
                         <Col span={4} className="breadcrumb-title">
@@ -44,8 +45,27 @@ class Header extends React.Component {
                </Row>
             </div>
         )
+    } 
+    loginOut = () => {
+      this.loginOutLink()
     }
-} 
+    loginOutLink = () => {
+            userLogout().then(response => {
+                if (response.data.code === 0) {
+                this.props.history.push('/login');
+                } else if (response.data.code !== 0) {
+                    message.error(response.data.msg);
+                }
+              })
+              .catch(err => {
+                if (err.response) {
+                    message.error('系统错误');
+                  } else {
+                    message.error('网络错误');
+                  }
+              });
+    }
+}
 //将state.menuName 绑定到 props 的menuName
 const mapStateToProps = state => {
     return {
@@ -53,4 +73,4 @@ const mapStateToProps = state => {
     }
 }
 //从redux传递过来
-export default connect(mapStateToProps)(Header)
+export default withRouter(connect(mapStateToProps)(Header))
