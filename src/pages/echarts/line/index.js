@@ -18,7 +18,7 @@ import ReactEcharts from 'echarts-for-react'
 
 export default class Line extends React.Component{
 
-    componentWillMount(){
+    componentDidMount(){
         echarts.registerTheme('Default', echartTheme);
         echarts.registerTheme('Light', themeLight);
     }

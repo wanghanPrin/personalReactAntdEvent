@@ -10,7 +10,7 @@ export default class Tab extends React.Component{
         message.info("Hi,您选择了页签:"+key)
     }
     //渲染dom之前
-    componentWillMount(){
+    componentDidMount(){
         this.newTabIndex = 0;
         const panes = [
             {

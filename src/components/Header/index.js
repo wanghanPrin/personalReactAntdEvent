@@ -9,7 +9,7 @@ import {connect} from 'react-redux'  //连接器
 
 class Header extends React.Component {  
     state = {}
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
             userName: '超级管理员'
         })
@@ -19,6 +19,12 @@ class Header extends React.Component {
                 sysTime
             })                                   
         }, 1000)
+    }
+    //组件即将被移除dom时会触发，主要用于进行一些清理工作. — 处理内存泄漏
+    componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+          return;
+        };
     }
     render() {
         const {menuName} = this.props;
@@ -65,7 +71,7 @@ class Header extends React.Component {
                   }
               });
     }
-}
+} 
 //将state.menuName 绑定到 props 的menuName
 const mapStateToProps = state => {
     return {
@@ -73,4 +79,4 @@ const mapStateToProps = state => {
     }
 }
 //从redux传递过来
-export default withRouter(connect(mapStateToProps)(Header))
+export default withRouter(connect(mapStateToProps)(Header)) 
