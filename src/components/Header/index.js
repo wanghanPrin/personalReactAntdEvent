@@ -37,7 +37,7 @@ class Header extends React.Component {
                   </Col> 
                   <Col span={18}> 
                       <span>欢迎，{this.state.userName}</span>
-                      <span onClick={this.loginOut}>退出</span>            
+                      <span className="loginOut" onClick={this.loginOut}>退出</span>            
                   </Col> 
                </Row>
                <Row className="breadcrumb">
